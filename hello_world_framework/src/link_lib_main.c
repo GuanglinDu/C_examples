@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 	ps2 = &s2;
 	sum02(&a, &b, ps2);
 	printf("--- Hi, I'm using a static/shared library\n");
+	printf("hello\n");
 	printf("link_lib_main: %d + %d = %d\n", a, b, s2);
 	
 	return 0;
