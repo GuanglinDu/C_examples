@@ -70,6 +70,8 @@ BIN = $(BIN_DIR)/a.out
 # Use the exe extension on Windows if you like
 #BIN = $(BIN_DIR)\a.exe
 
+.PHONY: all mkdir compile build rebuild run
+
 # Attentions: The 1st target is the default one
 all: run
 
@@ -88,7 +90,7 @@ $(BIN): $(OBJ)
 
 ## We now only support Linux and Windows. Note: if...fi block is shell scripting.
 mkdir:
-	@echo "--- Checking whether the dirs exist. Otherwise, create them..."
+	@echo "--- Checking whether the dirs exist. Otherwise, create them ..."
 #Linux/Unix only
 ifeq ($(OS), Linux)
 #	mkdir -p $(OBJ_DIR)
@@ -130,6 +132,7 @@ test_static_lib: static_lib
 	$(CC) -static link_lib_main.c -L. -L$(BIN_DIR) -lpointer_examples -o $(BIN_DIR)/statically_linked
 	$(BIN_DIR)/statically_linked
 
+# See also http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
 shared_lib:
 	$(CC) -c -fPIC $(SRC_DIR)/pointer_examples.c -o $(OBJ_DIR)/pointer_examples.o 
 	$(CC) -shared -Wl,-soname,$(BIN_DIR)/libpointer_examples.so.1 \
