@@ -36,7 +36,7 @@ void swap(int *a, int *b) {
 	*b = c; 
 }
 
-void callback_demo(int *a, int *b, void ( *fp)(int *x, int *y)) {
+void callback_demo(int *a, int *b, void (*fp)(int *x, int *y)) {
 	fp(a, b); // call back
 }
 
