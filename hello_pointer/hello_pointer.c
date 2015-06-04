@@ -28,3 +28,22 @@ void simple_pointers()
  	lp = &li;
  	printf("li = %lu, size of li is %d bytes\n", *lp, sizeof(lp));	
 }
+
+void swap(int *a, int *b) {
+	int c;
+	c = *a;
+	*a = *b;
+	*b = c; 
+}
+
+void callback_demo(int *a, int *b, void ( *fp)(int *x, int *y)) {
+	fp(a, b); // call back
+}
+
+void ascending_sort(int *a, int *b) {
+	if (*a > * b) {
+		int c = *a;
+		*a = *b;
+		*b = c;
+	}
+}
