@@ -37,7 +37,7 @@ void swap(int *a, int *b) {
 }
 
 void callback_demo(int *a, int *b, void ( *fp)(int *x, int *y)) {
-	fp(a, b); // call back
+	fp(a, b); // callback
 }
 
 void ascending_sort(int *a, int *b) {
@@ -45,5 +45,13 @@ void ascending_sort(int *a, int *b) {
 		int c = *a;
 		*a = *b;
 		*b = c;
+	}
+}
+
+void descending_sort(int *a, int *b) {
+	if (*a < * b) {
+		int c = *b;
+		*b = *a;
+		*a = c;
 	}
 }

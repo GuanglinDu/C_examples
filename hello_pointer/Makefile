@@ -6,7 +6,7 @@
 CC = gcc
 BIN = hello_pointer.exe
  
- all: run
+all: run
  
 hello_pointer_main.o: hello_pointer_main.c
 	$(CC) -c hello_pointer_main.c -o hello_pointer_main.o
